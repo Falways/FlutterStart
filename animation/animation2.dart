@@ -37,9 +37,10 @@ class _LogoAppState extends State<LogoApp> with TickerProviderStateMixin {
   // initState初始化时候加载动画
   initState() {
     super.initState();
+    // 初始化controllet，来指定动画执行时长, 设定vsync
     controller = new AnimationController(
         duration: const Duration(milliseconds: 2000), vsync: this);
-
+    // 初始化动画效果
     animation = new CurvedAnimation(parent: controller, curve: Curves.easeIn);
 
     // forward方法让动画开始执行
@@ -51,7 +52,7 @@ class _LogoAppState extends State<LogoApp> with TickerProviderStateMixin {
         controller.forward();
       }
     });
-
+    // 开始执行动画
     controller.forward();
   }
 
